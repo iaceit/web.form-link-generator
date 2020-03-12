@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <script src="https://use.fontawesome.com/89962a7c6d.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+            integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous"/>
+
+    <script type="text/javascript" src="./js/generator.js"></script>
+
+    <title>IACEIT | Evaluation Form Generator</title>
+</head>
+
+<style>
+    body {
+        background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/plaid.png");
+        background-repeat: repeat;
+        /*background-attachment: fixed;*/
+        /*background-size: cover;*/
+    }
+
+    #message-text {
+        height: 300px;
+    }
+
+</style>
+
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="card col-md-6 col-sm-auto">
+            <div class="row card-header justify-content-center pt-4">
+                <h5>COURSE EVALUATION FORM GENERATOR</h5>
+            </div>
+            <div class="card-body">
+                <form id="main-form">
+                    <div id="alert-message" class="alert alert-danger" role="alert" style="display: none">
+                        Please fill all required fields!
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label requiredField" for="student-name">
+                            Student Name
+                        </label>
+                        <input class="form-control" id="student-name" name="student-name" type="text" required/>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="student-email">
+                            Student Email
+                        </label>
+                        <input class="form-control" id="student-email" name="student-email" type="email" required/>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="course-code">
+                            Course Code
+                        </label>
+                        <input class="form-control" id="course-code" name="course-code" type="text" required/>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="tutor-name">
+                            Tutor Name
+                        </label>
+                        <input class="form-control" id="tutor-name" name="tutor-name" type="text" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label requiredField" for="duration">
+                            Course Duration
+                        </label>
+                        <select id="duration" name="duration" class="form-control" required>
+                            <option value="30 minutes">30 minutes</option>
+                            <option value="45 minutes">45 minutes</option>
+                            <option value="1 hour">1 hour</option>
+                            <option value="1 hour 15 minutes">1 hour 15 minutes</option>
+                            <option value="1 hour 30 minutes">1 hour 30 minutes</option>
+                            <option value="1 hour 45 minutes">1 hour 45 minutes</option>
+                            <option value="2 hour">2 hour</option>
+                            <option value="2 hours 15 minutes">2 hours 15 minutes</option>
+                            <option value="2 hours 30 minutes">2 hours 30 minutes</option>
+                            <option value="2 hours 45 minutes">2 hours 45 minutes</option>
+                            <option value="3 hour">3 hour</option>
+                            <option value="3 hours 15 minutes">3 hours 15 minutes</option>
+                            <option value="3 hours 30 minutes">3 hours 30 minutes</option>
+                            <option value="3 hours 45 minutes">3 hours 45 minutes</option>
+                            <option value="4 hour">4 hour</option>
+                            <option value="4 hours 15 minutes">4 hours 15 minutes</option>
+                            <option value="4 hours 30 minutes">4 hours 30 minutes</option>
+                            <option value="4 hours 45 minutes">4 hours 45 minutes</option>
+                            <option value="5 hour">5 hour</option>
+                            <option value="5 hours 15 minutes">5 hours 15 minutes</option>
+                            <option value="5 hours 30 minutes">5 hours 30 minutes</option>
+                            <option value="5 hours 45 minutes">5 hours 45 minutes</option>
+                            <option value="6 hours">6 hours</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label requiredField" for="duration">
+                            Course Start Time
+                        </label>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetime" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input"
+                                               data-target="#datetime"/>
+                                        <div class="input-group-append" data-target="#datetime"
+                                             data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                              $(function () {
+                                $('#datetime').datetimepicker({
+                                  defaultDate: moment(),
+                                  useCurrent: true,
+                                  minDate: moment('01-01-2020'),
+                                  maxDate: moment('01-01-2022')
+                                });
+                              });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex justify-content-center">
+                        <button class="btn btn-primary btn-block" id="generate" name="generate" type="button">
+                            Generate
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="email-modal" tabindex="-1" role="dialog" aria-labelledby="email-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Send Form via Email</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="send-to" class="col-form-label">Send To:</label>
+                        <input type="text" class="form-control" id="send-to">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="col-form-label">Subject:</label>
+                        <input type="text" class="form-control" id="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="send-message">Send message</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
